@@ -1,4 +1,0 @@
-ibator
-======
-
-iBATIS/MyBatis Generator
