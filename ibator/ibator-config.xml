@@ -7,13 +7,13 @@
     <ibatorContext id="context1">
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://112.124.35.180:3306/hai_commons?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;zeroDateTimeBehavior=convertToNull"
-                        userId="root" password="mfkjesk"/>
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/tbl_user?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;zeroDateTimeBehavior=convertToNull"
+                        userId="root" password="123456"/>
 
         <javaModelGenerator targetPackage="ibator.model" targetProject="target"/>
         <sqlMapGenerator targetPackage="ibator.sqlmap" targetProject="target"/>
 
-        <table schema="" tableName="enums" domainObjectName="Enums">
+        <table schema="" tableName="user" domainObjectName="User">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
