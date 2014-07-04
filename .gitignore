@@ -5,6 +5,7 @@
 *.iml
 
 /ibator/target
+/mybator/target
 
 # Package Files #
 *.war
