@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration>
+    <classPathEntry location="D:\Linpn\.m2\repository\mysql\mysql-connector-java\5.1.28\mysql-connector-java-5.1.28.jar" />
+    <ibatorContext id="context1">
+    
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://112.124.35.180:3306/hai_commons?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;zeroDateTimeBehavior=convertToNull" userId="root" password="mfkjesk" />
+        
+        <javaModelGenerator targetPackage="ibator.model" targetProject="target" />
+        <sqlMapGenerator targetPackage="ibator.sqlmap" targetProject="target" />
+
+        <table schema="" tableName="enums" domainObjectName="Enums">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+
+    </ibatorContext>
+</ibatorConfiguration>
+
+
+        <!--
+             column    自增长或使用sequence生成的字段名
+             sqlStatement 生成字段的sql片段或其简称(参考官方文档)
+             identity    true表示后生成，false表示预生成
+
+                 例如：
+
+                 postgresql：<generatedKey
+                     column="lid"
+                     sqlStatement="select nextval('tb000000producttype_lid_seq')"
+                     identity="false" />
+
+                 sqlserver：<generatedKey
+                     column="lid"
+                     sqlStatement="SqlServer"
+                     identity="true" />
+
+                 oracle：<generatedKey
+                     column="lid"
+                     sqlStatement="select tb000000producttype_lid_seq.nextval from dual"
+                     identity="false" />
+
+         -->
