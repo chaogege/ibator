@@ -4,6 +4,8 @@
 *.ids
 *.iml
 
+/ibator/target
+
 # Package Files #
 *.war
 *.ear

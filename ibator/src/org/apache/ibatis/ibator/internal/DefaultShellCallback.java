@@ -27,7 +27,7 @@ import org.apache.ibatis.ibator.internal.util.messages.Messages;
  */
 public class DefaultShellCallback implements ShellCallback {
     private boolean overwrite;
-    
+
     /**
      *  
      */
@@ -49,8 +49,11 @@ public class DefaultShellCallback implements ShellCallback {
         
         File project = new File(targetProject);
         if (!project.isDirectory()) {
-            throw new ShellException(Messages.getString("Warning.9", //$NON-NLS-1$
+            boolean rc = project.mkdirs();
+            if (!rc) {
+                throw new ShellException(Messages.getString("Warning.9", //$NON-NLS-1$
                     targetProject));
+            }
         }
         
         StringBuilder sb = new StringBuilder();
@@ -79,7 +82,7 @@ public class DefaultShellCallback implements ShellCallback {
     public void refreshProject(String project) {
         // nothing to do in the default shell callback
     }
-    
+
     /* (non-Javadoc)
      * @see org.apache.ibatis.ibator.api.ShellCallback#isMergeSupported()
      */
@@ -95,9 +98,8 @@ public class DefaultShellCallback implements ShellCallback {
      * (non-Javadoc)
      * @see org.apache.ibatis.ibator.api.ShellCallback#mergeJavaFile(java.lang.String, java.lang.String, java.lang.String[])
      */
-    public String mergeJavaFile(String newFileSource,
-            String existingFileFullPath, String[] javadocTags)
-            throws ShellException {
+    public String mergeJavaFile(String newFileSource, String existingFileFullPath,
+                                String[] javadocTags) throws ShellException {
         throw new UnsupportedOperationException();
     }
 }
