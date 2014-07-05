@@ -70,10 +70,10 @@ public class DeleteByPrimaryKeyElementGenerator extends AbstractXmlElementGenera
             answer.addElement(new TextElement(sb.toString()));
             
             XmlElement dynamicElement = new XmlElement("iterate"); //$NON-NLS-1$
-            dynamicElement.addAttribute(new Attribute("open", ")"));
-            dynamicElement.addAttribute(new Attribute("close", "("));
+            dynamicElement.addAttribute(new Attribute("open", "("));
+            dynamicElement.addAttribute(new Attribute("close", ")"));
             dynamicElement.addAttribute(new Attribute("conjunction", ","));
-            dynamicElement.addElement(new TextElement("#[]"+ introspectedColumn.getJdbcTypeName() +"#"));
+            dynamicElement.addElement(new TextElement("#[]:"+ introspectedColumn.getJdbcTypeName() +"#"));
             answer.addElement(dynamicElement);
         }
 
